@@ -6,10 +6,9 @@ import { useState } from "react";
 const Home = () => {
   const [query, setQuery] = useState('')
 
-  let url = `https://api.tvmaze.com/shows`
-  if (query) {
-    url = `https://api.tvmaze.com/search/shows?q=${query}`
-  }
+  const url = !query
+    ? `https://api.tvmaze.com/shows`
+    : `https://api.tvmaze.com/search/shows?q=${query}`
 
   const { error, isLoading, data: shows } = useFetch(url);
 
