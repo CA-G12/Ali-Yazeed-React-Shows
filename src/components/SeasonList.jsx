@@ -1,12 +1,15 @@
-const ShowList = ({ shows }) => {
-  
-  console.log(shows);
-  return shows.map((show => (
-      <div className="show-card">
-        <h2>{show.name}</h2>
-        {/* <p>{show.content}</p> */}
-      </div>
-  )));
-}
+import { Link } from "react-router-dom";
+const SeasonList = ({ seasons }) => {
 
-export default ShowList;
+  console.log('seasons:', seasons);
+  return (
+    <ul className="seasons-list">
+      {seasons && seasons.map((season, index) => (
+        <li key={season.id}><a href={season.url}>Season {index + 1}</a></li>
+      ))}
+    </ul>
+  )
+
+};
+
+export default SeasonList;
