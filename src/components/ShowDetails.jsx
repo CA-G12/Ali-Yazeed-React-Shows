@@ -8,14 +8,14 @@ const ShowDetails = () => {
   const { id } = useParams()
   const url = `https://api.tvmaze.com/shows/${id}/seasons`
 
-  const { error, isLoading, data: showSeasons } = useFetch(url);
+  const { error, isLoading, data: seasons } = useFetch(url);
   const { error2, isLoading2, data: showInfo } = useFetch(`https://api.tvmaze.com/shows/${id}`);
-
+  // _embedded
   return (
-    <div className="container">
+    <div className="show-details">
       <div>Show Details</div>
       <ShowInfo info={showInfo}/>  
-      <SeasonList seasons={ showSeasons } />  
+      <SeasonList seasons={seasons} error2={error2} isLoading2={isLoading2}  id={ id } />  
     </div>
   );
 }

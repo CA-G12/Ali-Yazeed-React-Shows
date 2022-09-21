@@ -1,9 +1,15 @@
 import { useState } from "react";
 
-const Search = ({query, setQuery}) => {
+const Search = ({ query, setQuery }) => {
+    
+    // useEffect((e) => {
+    //     const input = document.querySelector('input')
+    //     input.addEventListener('keydown', eventHandler)
+    //     return () => input.removeEventListener('keydown', eventHandler)
+    // }, [])
 
     return ( 
-        <form  >
+        <form>
             <label>Search</label>
             <input
                 type="text"
@@ -15,4 +21,4 @@ const Search = ({query, setQuery}) => {
      );
 }
  
-export default Search;
+export default Search; 
