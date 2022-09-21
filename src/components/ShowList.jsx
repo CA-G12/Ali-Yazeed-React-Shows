@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-const ShowList = ({ shows }) => {
+const ShowList = ({ shows, moreNum }) => {
 
-  return shows && shows.map((show => {
+
+  return shows && shows.slice(0, moreNum).map((show => {
     const optimizedShow = show.show ? show.show : show;
     return (
       <Link to={`/shows/${optimizedShow.id}`}>

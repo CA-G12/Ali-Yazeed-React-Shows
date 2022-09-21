@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Home = () => {
   const [query, setQuery] = useState('')
+  const [moreNum, setMoreNum] = useState(19)
 
   const url = !query
     ? `https://api.tvmaze.com/shows`
@@ -17,7 +18,8 @@ const Home = () => {
       <Search query={query} setQuery={setQuery} />
       {error && <div>{error}</div>}
       {isLoading && <div>Loading....</div>}
-      {shows && <ShowList shows={shows} />}
+      {shows && <ShowList shows={shows} moreNum={moreNum} />}
+      <button onClick={() => setMoreNum(moreNum + 20)}>Show More</button>
     </div>
   );
 };
