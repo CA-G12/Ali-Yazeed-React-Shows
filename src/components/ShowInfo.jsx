@@ -1,18 +1,23 @@
-const ShowInfo = ({ info }) => {
+const ShowInfo = ({ info, error }) => {
 
-  return (info && 
-    <div className="show-info" key={info.id}  style={{ 
-      backgroundImage: `url("${info.image.original}")` 
-    }}>
-      <div className="layer">
-        <h2>{info.name}</h2>
-        <div className="genres">
-          <span>{info.genres.join(' / ')}</span>
-          <span>{info.rating.average}</span>
+  return (
+    <>
+    { error && <div>{error}</div> }
+      {info &&
+        <div className="show-info" key={info.id} style={{
+          backgroundImage: `url("${info.image.original}")`
+        }}>
+          <div className="layer">
+            <h2>{info.name}</h2>
+            <div className="genres">
+              <span>{info.genres.join(' / ')}</span>
+              <span>{info.rating.average}</span>
+            </div>
+            <p dangerouslySetInnerHTML={{ __html: info.summary }}></p>
+          </div>
         </div>
-        <p>{info.summary.slice(3,-4)}</p>
-      </div>
-    </div>
+      }
+      </>
   );
 }
 

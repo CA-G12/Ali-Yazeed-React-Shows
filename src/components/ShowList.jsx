@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+
+import { Component } from "react";
+
 const ShowList = ({ shows, moreNum }) => {
 
   return (
@@ -7,7 +11,7 @@ const ShowList = ({ shows, moreNum }) => {
         const optimizedShow = show.show ? show.show : show;
         return (
           <div className="card" key={optimizedShow.id}>
-              <a className="card-link" href={`/shows/${optimizedShow.id}`}>
+              <Link className="card-link" to={`/shows/${optimizedShow.id}`}>
                 <img src={optimizedShow.image.medium} alt="" />
                 <div className="layer">
                     <div className="info">
@@ -16,7 +20,7 @@ const ShowList = ({ shows, moreNum }) => {
                       <p>{optimizedShow.genres.join(' / ')}</p>
                     </div>
                 </div>
-              </a>
+              </Link>
         </div>)  
         }))}
       </div>
@@ -25,3 +29,58 @@ const ShowList = ({ shows, moreNum }) => {
 }
 
 export default ShowList;
+
+
+//! CLASS MODIFICATION:
+
+// export default class ShowList extends Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = {
+//       shows: '',
+//       moreNum: ''
+//     }
+//   }
+
+//   componentDidMount() {
+//       this.setState({
+//         shows: this.props.shows,
+//         moreNum: this.props.moreNum
+//       })
+//   }
+
+//   componentDidUpdate(prevProps, prevState) {
+//     if (prevProps.moreNum !== this.props.moreNum) {
+//       this.setState({
+//         shows: this.props.shows,
+//         moreNum: this.props.moreNum
+//       })
+//     }
+//   }
+
+//   render() {
+//     const { shows, moreNum } = this.state;
+//     return (
+//       <div className="card-list">
+//         <div className="container">
+//           {shows && shows.slice(0, moreNum).map((show => {
+//             const optimizedShow = show.show ? show.show : show;
+//             return (
+//               <div className="card" key={optimizedShow.id}>
+//                 <Link className="card-link" to={`/shows/${optimizedShow.id}`}>
+//                   <img src={optimizedShow.image.medium} alt="" />
+//                   <div className="layer">
+//                     <div className="info">
+//                       <h2>{optimizedShow.name}</h2>
+//                       <p>{optimizedShow.rating.average}</p>
+//                       <p>{optimizedShow.genres.join(' / ')}</p>
+//                     </div>
+//                   </div>
+//                 </Link>
+//               </div>)
+//           }))}
+//         </div>
+//       </div>
+//     )
+//   }
+// }

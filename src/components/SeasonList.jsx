@@ -1,23 +1,22 @@
 import { Link } from "react-router-dom";
 
-const SeasonList = ({ seasons, error2, isLoading2 }) => {
+const SeasonList = ({ seasons, error, isLoading }) => {
 
   return (
     <div className="season-list">
       <ul className="card-list">
-        {error2 && <div>{error2}</div>}
-        {isLoading2 && <div>Loading....</div>}
+        {error && <div>{error}</div>}
         {seasons && seasons.map(season => (
-        <li className="card" key={season.id}>
-        <a className="card-link" href={`/shows/season/${season.id}`}>
-          <img src={season.image.medium} alt="" />
-          <div className="layer">
-              <div className="info">
-                <h2>Season {season.number}</h2>
+          <li className="card" key={season.id}>
+            <Link className="card-link" to={`/shows/season/${season.id}`}>
+              <img src={season.image.medium} alt="" />
+              <div className="layer">
+                <div className="info">
+                  <h2>Season {season.number}</h2>
+                </div>
               </div>
-          </div>
-        </a>
-      </li>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

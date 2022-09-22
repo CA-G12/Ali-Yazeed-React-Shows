@@ -262,6 +262,9 @@ a {
   padding: 30px;
   background-color: rgb(28, 28, 28, 0.8);
   z-index: 1;
+  position: absolute;
+  width: 80%;
+  height: 90%;
 }
 
 .show-info .layer h2 {
