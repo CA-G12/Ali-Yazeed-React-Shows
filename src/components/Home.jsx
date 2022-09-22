@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Home = () => {
   const [query, setQuery] = useState('')
-  const [moreNum, setMoreNum] = useState(19)
+  const [moreNum, setMoreNum] = useState(20)
 
   const url = !query
     ? `https://api.tvmaze.com/shows`
@@ -13,13 +13,23 @@ const Home = () => {
 
   const { error, isLoading, data: shows } = useFetch(url);
 
+  let section;
+  if (isLoading) {
+    section = <div class="lds-facebook"><div></div><div></div><div></div></div>;
+  } else {
+    section = (
+         <div>
+        {shows && <ShowList shows={shows} moreNum={moreNum} />}
+         <button className="show-more" onClick={() => setMoreNum(moreNum + 20)}>Show More</button>
+         </div>)
+    ;
+  }
+
   return (
     <div className="home">
       <Search query={query} setQuery={setQuery} />
       {error && <div>{error}</div>}
-      {isLoading && <div>Loading....</div>}
-      {shows && <ShowList shows={shows} moreNum={moreNum} />}
-      <button onClick={() => setMoreNum(moreNum + 20)}>Show More</button>
+      {section}
     </div>
   );
 };

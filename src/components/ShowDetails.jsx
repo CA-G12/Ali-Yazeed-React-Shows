@@ -9,13 +9,23 @@ const ShowDetails = () => {
   const url = `https://api.tvmaze.com/shows/${id}/seasons`
 
   const { error, isLoading, data: seasons } = useFetch(url);
-  const { error2, isLoading2, data: showInfo } = useFetch(`https://api.tvmaze.com/shows/${id}`);
-  // _embedded
+  const { error: error2, isLoading: isLoading2, data: showInfo } = useFetch(`https://api.tvmaze.com/shows/${id}`);
+  
+  let section;
+  if (isLoading || isLoading2) {
+    section = <div class="lds-facebook"><div></div><div></div><div></div></div>;
+  } else {
+    section = (
+         <>
+            <ShowInfo info={showInfo}/>  
+            <SeasonList seasons={seasons} error2={error2} isLoading2={isLoading2}  id={ id } /> 
+         </>)
+    ;
+  }
+
   return (
     <div className="show-details">
-      <div>Show Details</div>
-      <ShowInfo info={showInfo}/>  
-      <SeasonList seasons={seasons} error2={error2} isLoading2={isLoading2}  id={ id } />  
+      {section}
     </div>
   );
 }
