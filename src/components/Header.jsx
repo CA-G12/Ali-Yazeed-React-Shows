@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -9,14 +10,14 @@ const Header = () => {
   }
 
   return (
-    <header>   
+    <header>
       <div className="header">
-            <a href="/">
-              <i className="fa-solid fa-film"></i>
-              SHOWS TIME
-            </a>
-       </div>
-      {<div className="navigation"><a href="" onClick={handleNavigate}>Back</a></div>}
+        <a href="/">
+          <i className="fa-solid fa-film"></i>
+          SHOWS TIME
+        </a>
+      </div>
+      {<div className="navigation"><a href="#" onClick={handleNavigate}>Back</a></div>}
     </header>
   );
 }
