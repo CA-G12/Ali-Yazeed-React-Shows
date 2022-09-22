@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CA-G12/Ali-Yazeed-React-Shows.git/static/css/main.5ec7ed2a.css",
+    "main.js": "/CA-G12/Ali-Yazeed-React-Shows.git/static/js/main.1bb6467c.js",
+    "index.html": "/CA-G12/Ali-Yazeed-React-Shows.git/index.html",
+    "main.5ec7ed2a.css.map": "/CA-G12/Ali-Yazeed-React-Shows.git/static/css/main.5ec7ed2a.css.map",
+    "main.1bb6467c.js.map": "/CA-G12/Ali-Yazeed-React-Shows.git/static/js/main.1bb6467c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ec7ed2a.css",
+    "static/js/main.1bb6467c.js"
+  ]
+}
