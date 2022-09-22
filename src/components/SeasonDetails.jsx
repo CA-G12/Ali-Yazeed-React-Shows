@@ -8,8 +8,6 @@ const ShowDetails = () => {
   const { id } = useParams()
   const url = `https://api.tvmaze.com/shows/${id}/seasons`
 
-
-  // _embedded
   return (
     <div className="show-details">
       <SeasonInfo id={ id } />  
