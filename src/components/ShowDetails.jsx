@@ -1,7 +1,7 @@
 import ShowInfo from './ShowInfo';
 import SeasonList from './SeasonList';
 import useFetch from '../utils/useFetch.js';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ShowDetails = () => {
 

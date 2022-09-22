@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-
-import { Component } from "react";
-
 const ShowList = ({ shows, moreNum }) => {
 
   return (

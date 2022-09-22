@@ -2,7 +2,7 @@ import useFetch  from "../utils/useFetch";
 
 const SeasonInfo = ({ id }) => {
 
-  const { error, isLoading, data: seasonInfo } = useFetch(`https://api.tvmaze.com/seasons/${id}`);
+  const { data: seasonInfo } = useFetch(`https://api.tvmaze.com/seasons/${id}`);
 
   console.log('seasonInfo: ', seasonInfo);
 
