@@ -13,7 +13,6 @@ const ShowDetails = () => {
   // _embedded
   return (
     <div className="show-details">
-      <div>Show Details</div>
       <ShowInfo info={showInfo}/>  
       <SeasonList seasons={seasons} error2={error2} isLoading2={isLoading2}  id={ id } />  
     </div>

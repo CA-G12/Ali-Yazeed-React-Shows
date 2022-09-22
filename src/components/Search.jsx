@@ -9,13 +9,13 @@ const Search = ({ query, setQuery }) => {
     // }, [])
 
     return ( 
-        <form>
-            <label>Search</label>
+        <form className="search-bar">
             <input
                 type="text"
                 required
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                placeholder="Enter your search here.."
             />
         </form>
      );

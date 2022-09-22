@@ -9,10 +9,14 @@ const Header = () => {
   }
 
   return (
-    <header>
-        
-      <div><a href="/">SHOWS TIME</a></div>
-      <div><a href="" onClick={handleNavigate}>Back</a></div>
+    <header>   
+      <div className="header">
+            <a href="/">
+              <i className="fa-solid fa-film"></i>
+              SHOWS TIME
+            </a>
+       </div>
+      {<div className="navigation"><a href="" onClick={handleNavigate}>Back</a></div>}
     </header>
   );
 }
