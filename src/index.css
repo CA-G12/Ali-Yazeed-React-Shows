@@ -229,6 +229,8 @@ a {
   display: flex;
 }
 
+
+
 .show-details>* {
   width: 50%;
 }
@@ -243,6 +245,7 @@ a {
   z-index: -1;
   background-size: cover;
 }
+
 
 .show-details>.show-info:before {
   position: absolute;
@@ -274,6 +277,17 @@ a {
 
 .show-info .layer p {
   font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .show-details {
+    flex-direction: column;
+  }
+
+  .show-details>* {
+    width: 100% !important;
+  }
 }
 
 /* End Show Details  */
