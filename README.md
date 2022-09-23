@@ -1,22 +1,18 @@
 # Ali-Yazeed-React-Shows
 
-## Live Server [HERE](https://fastidious-bavarois-ec6ed1.netlify.app/)
+## Live Site [HERE](https://fastidious-bavarois-ec6ed1.netlify.app/)
 ---
 ## Description:
+A Show app that gives user a simple inerface tracking any shows including all details and the seasons with its episodes.
 
-
----
-
-## User Stories:
-
-
-##  Technologies that I used
+##  Technologies that we used
 
 - -> HTML5.
 - -> CSS3.
 - -> JavaScript.
----> React.Js
+- -> React.Js
 - -> NPM.
+- -> API.
 - -> Git & GitHub.
 
 ## This app is presented to you by:
