@@ -1,19 +1,22 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import Navbar from './components/Header';
 import Home from './components/Home';
 import ShowDetails from './components/ShowDetails';
 import SeasonDetails from './components/SeasonDetails';
 
 function App() {
+
+  const [page, setPage] = useState(null);
   return (
     <Router>
       <div className='App'>
-        <Navbar />
+        <Navbar page={page}/>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/shows/:id' element={<ShowDetails />} />
-          <Route path='/shows/season/:id' element={<SeasonDetails />} />
+          <Route path='/' element={<Home setPage={setPage}/>} />
+          <Route path='/shows/:id' element={<ShowDetails setPage={setPage} />} />
+          <Route path='/shows/season/:id' element={<SeasonDetails setPage={setPage}/>} />
         </Routes>
       </div>
     </Router>

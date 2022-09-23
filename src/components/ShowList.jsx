@@ -9,7 +9,7 @@ const ShowList = ({ shows, moreNum }) => {
         return (
           <div className="card" key={optimizedShow.id}>
               <Link className="card-link" to={`/shows/${optimizedShow.id}`}>
-                <img src={optimizedShow.image.medium} alt="" />
+              <img src={optimizedShow.image? optimizedShow.image.medium: '../images/blank-show.png'} alt="" />
                 <div className="layer">
                     <div className="info">
                       <h2>{optimizedShow.name}</h2>

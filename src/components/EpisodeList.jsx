@@ -13,7 +13,7 @@ const EpisodeList = () => {
           {episodes && episodes.map(episode => (
           <li className="card" key={episode.id}>
           <a className="card-link" href={episode.url}>
-            <img src={episode.image.medium} alt="" />
+            <img src={episode.image? episode.image.medium: '../images/blank-show.png'} alt="" />
             <div className="layer">
                 <div className="info">
                   <h2>Episode {episode.number}</h2>

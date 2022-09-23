@@ -2,11 +2,14 @@ import ShowList from './ShowList';
 import useFetch from '../utils/useFetch.js';
 import Search from './Search';
 import { useState } from "react";
+import '../home.css';
 
-const Home = () => {
+const Home = (props) => {
   const [query, setQuery] = useState('')
   const [moreNum, setMoreNum] = useState(20)
 
+  props.setPage('Home');
+  
   const url = !query
     ? `https://api.tvmaze.com/shows`
     : `https://api.tvmaze.com/search/shows?q=${query}`

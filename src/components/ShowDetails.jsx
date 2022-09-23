@@ -3,10 +3,12 @@ import SeasonList from './SeasonList';
 import useFetch from '../utils/useFetch.js';
 import { useParams } from "react-router-dom";
 
-const ShowDetails = () => {
+const ShowDetails = (props) => {
 
   const { id } = useParams()
   const url = `https://api.tvmaze.com/shows/${id}/seasons`
+
+  props.setPage('Seasons');
 
   const { error: error2, isLoading: isLoading2, data: showInfo } = useFetch(`https://api.tvmaze.com/shows/${id}`);
   const { error, isLoading, data: seasons } = useFetch(url);

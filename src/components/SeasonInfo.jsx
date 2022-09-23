@@ -8,7 +8,7 @@ const SeasonInfo = ({ id }) => {
 
   return (seasonInfo && 
     <div className="show-info" key={seasonInfo.id}  style={{ 
-      backgroundImage: `url("${seasonInfo.image.original}")` 
+      backgroundImage: `url("${seasonInfo.image?seasonInfo.image.original: '../images/blank-show.png'}")` 
     }}>
       <div className="layer">
         <h2>{seasonInfo.name}</h2>

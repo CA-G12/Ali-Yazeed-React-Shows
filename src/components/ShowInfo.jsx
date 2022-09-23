@@ -5,7 +5,7 @@ const ShowInfo = ({ info, error }) => {
     { error && <div>{error}</div> }
       {info &&
         <div className="show-info" key={info.id} style={{
-          backgroundImage: `url("${info.image.original}")`
+          backgroundImage: `url("${info.image? info.image.original: '../images/blank-show.png'}")`
         }}>
           <div className="layer">
             <h2>{info.name}</h2>
