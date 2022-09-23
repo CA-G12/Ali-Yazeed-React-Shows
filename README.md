@@ -3,7 +3,7 @@
 ## Live Site [HERE](https://fastidious-bavarois-ec6ed1.netlify.app/)
 ---
 ## Description:
-A Show app that gives user a simple inerface tracking any shows including all details and the seasons with its episodes.
+A Show app that gives the user a simple interface tracking any shows including all details and the seasons with its episodes.
 
 ##  Technologies that we used
 
