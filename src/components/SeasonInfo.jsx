@@ -1,6 +1,6 @@
 import useFetch  from "../utils/useFetch";
 
-const SeasonInfo = ({ id }) => {
+const SeasonInfo = ({ id, showInfo }) => {
 
   const { data: seasonInfo } = useFetch(`https://api.tvmaze.com/seasons/${id}`);
 
@@ -11,15 +11,9 @@ const SeasonInfo = ({ id }) => {
       backgroundImage: `url("${seasonInfo.image?seasonInfo.image.original: '../images/blank-show.png'}")` 
     }}>
       <div className="layer">
-        <h2>{seasonInfo.name}</h2>
+        <h2>Season {seasonInfo.number}</h2>
         <p>Premiered at: {seasonInfo.premiereDate}</p>
         <p>Episodes: {seasonInfo.episodeOrder}</p>
-        <div className="genres">
-
-          {/* <span>{seasonInfo.genres.join(' / ')}</span>
-          <span>{seasonInfo.rating.average}</span> */}
-        </div>
-        {/* <p>{seasonInfo.summary.slice(3,-4)}</p> */}
       </div>
     </div>
   );

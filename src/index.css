@@ -100,7 +100,7 @@ a {
 .header {
   background-color: var(--dark-color);
   color: white;
-  padding: 20px 50px;
+  padding: 15px 50px;
 }
 
 .header a {
@@ -159,13 +159,13 @@ a {
 .card-list .container,
 .season-list .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .season-list .card-list {
   padding: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 
 }
 
@@ -331,7 +331,7 @@ a {
 
 .show-info .layer p {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 

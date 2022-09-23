@@ -13,7 +13,7 @@ const ShowInfo = ({ info, error }) => {
               <span>{info.genres.join(' / ')}</span>
               <span>{info.rating.average}</span>
             </div>
-            <p dangerouslySetInnerHTML={{ __html: info.summary }}></p>
+            <p dangerouslySetInnerHTML={{ __html: info.summary.length > 500 ? info.summary.slice(0, 550) + '...': info.summary }}></p>
           </div>
         </div>
       }
